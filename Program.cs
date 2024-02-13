@@ -37,11 +37,9 @@ void Fill(char[,] massiv)
             if (d<4) //макс число символов в строке
             {
               Stroka[i] = Stroka[i] + massiv[i, j];
-              
-            }
+                          }
         }
         Console.WriteLine("Строка" + i + ":  " + Stroka[i]);
-        //Console.WriteLine("Строка " + i + ": " + Stroka[i]);
     } 
 }
   
@@ -62,5 +60,5 @@ Fill(massiv);
 Console.WriteLine();
 Console.WriteLine("Исходный массив");
 Print(massiv);  
-//Console.WriteLine();
+
 
