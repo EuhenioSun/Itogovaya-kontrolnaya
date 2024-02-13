@@ -12,10 +12,10 @@
 
 
 Console.WriteLine("введите количество строк / макс количество символов в строке (не менее 5) через ENTER");
-(int i,int j) = (Convert.ToInt32(Console.ReadLine()),Convert.ToInt32(Console.ReadLine()));
+(int i, int j) = (Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
 
-char[,] massiv = new char [i,j]; //исходный массив
-Random Dlina = new Random (); // случайная длина строки исходного массива
+char[,] massiv = new char[i, j]; //исходный массив
+Random Dlina = new Random(); // случайная длина строки исходного массива
 Random Slych = new Random(); // случайные символы в исходный массив  
 string[] Stroka = new string[i];  //строки полученне из исходного массива
 
@@ -23,33 +23,33 @@ char[] simbols = "1234567890!@#$%^&*)(}{:<>+_-=?abcdefghijklmnopqrstuvwxyzABCDEF
 int r; int d;
 
 Console.WriteLine();
-Console.WriteLine("Строки в которых не более 3 символов : " );
+Console.WriteLine("Строки в которых не более 3 символов : ");
 void Fill(char[,] massiv)
 {
     for (int i = 0; i < massiv.GetLength(0); i++)
     {
-        d = Dlina.Next(1,j+1); // случайная длина i строки
+        d = Dlina.Next(1, j + 1); // случайная длина i строки
         for (int j = 0; j < d; j++)
         {
             r = Slych.Next(simbols.Length); // случайное значение j элемента
-            massiv[i,j] = simbols[r];
-            
-            if (d<4) //макс число символов в строке
+            massiv[i, j] = simbols[r];
+
+            if (d < 4) //макс число символов в строке
             {
-              Stroka[i] = Stroka[i] + massiv[i, j];
-                          }
+                Stroka[i] = Stroka[i] + massiv[i, j];
+            }
         }
         Console.WriteLine("Строка" + i + ":  " + Stroka[i]);
-    } 
+    }
 }
-  
+
 void Print(char[,] massiv)
 {
     for (int i = 0; i < massiv.GetLength(0); i++)
     {
         for (int j = 0; j < massiv.GetLength(1); j++)
         {
-            Console.Write(massiv[i,j] + " ");
+            Console.Write(massiv[i, j] + " ");
         }
         Console.WriteLine();
     }
@@ -59,6 +59,6 @@ Fill(massiv);
 
 Console.WriteLine();
 Console.WriteLine("Исходный массив");
-Print(massiv);  
+Print(massiv);
 
 
